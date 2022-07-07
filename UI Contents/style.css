@@ -1,0 +1,33 @@
+.Text{
+    
+}
+.Logo{
+    font-family:sans-serif;
+    font-size: 40px;
+    float: left;
+    margin = 20px;
+}
+.nav{
+    font-family:sans-serif;
+    font-size: 10px;
+    float: right;
+    margin = 20px;
+}
+
+.border{
+    border:1px solid #000;
+    border-radius: 4px;   
+}
+
+.font_used {  font-family: sans-serif;
+       font-style: italic;
+       font-weight: bold;
+       font-size: 40px;
+       color:#000;    }
+.back_img{
+     background-color: #000000;
+     background-image: url("house2.jpg");
+     background-repeat: repeat-x;
+     background-position: right left;
+     background:#000 url("house2.jpg") right top no-repeat; }
+
