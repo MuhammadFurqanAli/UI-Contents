@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week_3_Form_JS</title>
+
+</head>
+<body>
+    <script>
+        function Func(){
+            window.open();
+            /*
+            const urlParams = new URLSearchParams(window.location.search);
+            const Name = urlParams.get('fname');
+            const Email = urlParams.get('email');
+            const DOB = urlParams.get('dob');
+            const Interest = urlParams.get('selection');
+            const AboutYou = urlParams.get('aboutinfo');
+            Name.value;
+            Email.value;
+            DOB.value;
+            Interest.value;
+            AboutYou.value;*/
+        }
+        
+    </script>
+        <form>
+            <div><label for="fname">Name</label></div>
+            <div class="inputbox"><input type="text" id="fname" name="firstname" placeholder="MFA"></div>
+            <div><label for="email">Email</label></div>
+            <div><input type="text" id="email" name="email" placeholder="xyz@gmail.com"></div>
+            <div><label for="dob">DOB</label></div>
+            <div><input type="date"></div>
+            <div><label for="interest">Interest</label></div>
+            <div><select name="selection" id="selection">
+                <option value="select">Select Interest</option>
+                <option value="Cooking">Cooking</option>
+                <option value="Sports">Sports</option>
+                <option value="News">News</option>
+                <option value="Affairs">Affairs</option>
+            </select></div>
+                <input type="checkbox" name="individual" id="individual"><label for="checkbox">Individual</label>
+                <input type="checkbox" name="organization" id="organization"><label for="checkbox">Organization</label>
+                <br><br>
+                <div><label for="aboutinfo">About You</label></div>
+                <div><textarea name="aboutinfo" id="aboutinfo" cols="40" rows="12" placeholder=""></textarea></div>
+            <button  onclick="Func()">Send Details</button>
+        </form>
+</body>
+</html>
