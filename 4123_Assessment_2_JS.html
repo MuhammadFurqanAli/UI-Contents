@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,46 +8,69 @@
     <title>Week_3_Form_JS</title>
 
 </head>
+
 <body>
     <script>
-        function Func(){
-            window.open();
+        function formValid() {
             /*
-            const urlParams = new URLSearchParams(window.location.search);
-            const Name = urlParams.get('fname');
-            const Email = urlParams.get('email');
-            const DOB = urlParams.get('dob');
-            const Interest = urlParams.get('selection');
-            const AboutYou = urlParams.get('aboutinfo');
-            Name.value;
-            Email.value;
-            DOB.value;
-            Interest.value;
-            AboutYou.value;*/
+            if (Name == "") {
+                alert("Please enter your name.");
+                username.focus();
+                return false;
+            }
+            if (Email == "") {
+                alert("Please enter a valid e-mail address.");
+                email.focus();
+                return false;
+            }
+            if (AboutYou == "") {
+                alert("Please enter info about yourself.");
+            }
+
+            if (selection.selectedIndex < 1) {
+                alert("Please Select Valid Interest.");
+            }
+            return true;
+            */
         }
-        
+        function getPara() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var Name = urlParams.get('fname');
+            var Email = urlParams.get('email');
+            var DOB = urlParams.get('dob');
+            var Interest = urlParams.get('selection');
+            var AboutYou = urlParams.get('aboutinfo');
+            var newWind = window.open();
+            var message = " Name: " + Name + " Email: " + Email + " DOB: " + DOB + " Interest: " + Interest + " AboutYou: " + AboutYou;
+            newWind.document.write(message);
+        }
     </script>
-        <form>
-            <div><label for="fname">Name</label></div>
-            <div class="inputbox"><input type="text" id="fname" name="firstname" placeholder="MFA"></div>
-            <div><label for="email">Email</label></div>
-            <div><input type="text" id="email" name="email" placeholder="xyz@gmail.com"></div>
-            <div><label for="dob">DOB</label></div>
-            <div><input type="date"></div>
-            <div><label for="interest">Interest</label></div>
-            <div><select name="selection" id="selection">
+    <form>
+
+        <div><label for="fname">Name</label></div>
+        <div><input type="text" id="fname" name="fname" placeholder="MFA" required></div>
+        <div><label for="email">Email</label></div>
+        <div><input type="text" id="email" name="email" placeholder="abc@gmail.com" required></div>
+        <div><label for="dob">DOB</label></div>
+        <div><input type="date" id="dob" required></div>
+        <div><label for="interest">Interest</label></div>
+        <div><select name="selection" id="selection" required>
                 <option value="select">Select Interest</option>
                 <option value="Cooking">Cooking</option>
                 <option value="Sports">Sports</option>
                 <option value="News">News</option>
                 <option value="Affairs">Affairs</option>
             </select></div>
-                <input type="checkbox" name="individual" id="individual"><label for="checkbox">Individual</label>
-                <input type="checkbox" name="organization" id="organization"><label for="checkbox">Organization</label>
-                <br><br>
-                <div><label for="aboutinfo">About You</label></div>
-                <div><textarea name="aboutinfo" id="aboutinfo" cols="40" rows="12" placeholder=""></textarea></div>
-            <button  onclick="Func()">Send Details</button>
-        </form>
+        <input type="checkbox" name="individual" id="individual"><label for="checkbox">Individual</label>
+        <input type="checkbox" name="organization" id="organization"><label for="checkbox">Organization</label>
+        <br><br>
+        <div><label for="aboutinfo">About You</label></div>
+        <div><textarea name="aboutinfo" id="aboutinfo" cols="40" rows="12"
+                placeholder="Data will be shown by Pressing Show Details." required></textarea></div>
+        <button onclick="formValid()">Send Details</button>
+        <button onclick="getPara()">Show Details</button>
+    </form>
+
 </body>
+
 </html>
